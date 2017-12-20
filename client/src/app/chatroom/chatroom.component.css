@@ -1,0 +1,15 @@
+.chatinput {
+    bottom:0;
+    width:90%;
+    height:5%;
+    position: fixed;
+}
+.chatShow {
+    overflow: auto;
+    max-height: 300px;
+}
+.message {
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}

@@ -1,0 +1,36 @@
+
+<div class="container-rooms">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand">All blog messages</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li *ngFor="let message of chatMsx"><a (click)="selectChatroom(message)">{{message.name}}</a></li>
+          </ul>
+          <form (ngSubmit)="addChatroom()">
+              <div class="form-group" style="margin-top:10px">
+                <input type="text" id="author"
+                       required
+                       [(ngModel)]="model.name" name="name">
+                       <button type="submit">Add</button>
+              </div>
+            </form>
+        </div>
+      </nav>
+</div>
+<div class="maybehide"> 
+</div>
+<div class="showchat-container" *ngIf="edited">
+  <form (ngSubmit)="addChatMessage()">
+      <h1 class="display-1">{{currentChatroom.name}}</h1>
+    <div class="messageContainer" *ngFor="let messeage of currentChatMsx">
+        <p class="message">{{messeage.user}}: {{messeage.message}}</p>
+    </div> 
+  <div class="chatinput">
+    <input type="text" style="display:hidden" class="form-control" id="author" required [(ngModel)]="msg" name="msg">
+    <button type="submit" class="btn btn-default" >Submit</button>
+  </div>
+  </form>
+</div>
+
